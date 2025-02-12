@@ -68,6 +68,11 @@ const RegisterViewModel = () =>{
     }
     const register = async () => {
         if (validateForm()){
+            console.log("Values: "  + values.firstName)
+            console.log("Values: "  + values.lastName)
+            console.log("Values: "  + values.user)
+            console.log("Values: "  + values.email)
+            console.log("Values: "  + values.password)
             const response = await RegisterAuthUseCase(values)
             console.log("RESULT: " + JSON.stringify(response))
         }
@@ -100,8 +105,7 @@ const RegisterViewModel = () =>{
         ...values,
         onChangeRegister,
         register,
-        errorMessage,
-        validateForm
+        errorMessage
     }
 }
 export default {LoginViewModel, RegisterViewModel};
